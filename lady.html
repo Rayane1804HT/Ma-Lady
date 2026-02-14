@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine?</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.15);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 25px;
+    }
+
+    button {
+        border: none;
+        padding: 12px 25px;
+        font-size: 1.1em;
+        border-radius: 30px;
+        margin: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .yes {
+        background: #ff4d6d;
+        color: white;
+    }
+
+    .yes:hover {
+        transform: scale(1.1);
+    }
+
+    .no {
+        background: white;
+        color: #ff4d6d;
+        position: relative;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>❤️ Hey, My Lady ❤️</h1>
+    <p>I really enjoy spending time with you, and also really love you.<br>
+    Would you be my Valentine?</p>
+
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" onmouseover="moveButton()">No 😅</button>
+</div>
+
+<script>
+function sayYes() {
+    document.querySelector(".card").innerHTML =
+    "<h1>Nice🥹! 💕</h1><p>You just made my day my love🥹!</p>";
+}
+
+function moveButton() {
+    const button = document.querySelector(".no");
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    button.style.transform = `translate(${x}px, ${y}px)`;
+}
+</script>
+<audio id="music" loop>
+    <source src="I love you- Frank Sinatra.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.body.addEventListener("click", function() {
+    document.getElementById("music").play();
+});
+</script>
+
+
+</body>
+</html>
